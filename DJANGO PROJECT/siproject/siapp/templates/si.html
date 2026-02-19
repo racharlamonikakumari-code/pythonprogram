@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Interest</title>
+</head>
+<body>
+
+<h2>Simple Interest Calculator</h2>
+
+<form method="POST">
+    {% csrf_token %}
+
+    Principal:
+    <input type="number" name="p" required><br><br>
+
+    Rate:
+    <input type="number" name="r" required><br><br>
+
+    Time:
+    <input type="number" name="t" required><br><br>
+
+    <button type="submit">Calculate</button>
+</form>
+
+{% if result is not None %}
+<h3>Simple Interest = {{ result }}</h3>
+{% endif %}
+
+</body>
+</html>

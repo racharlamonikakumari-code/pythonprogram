@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration</title>
+</head>
+<body>
+
+<h2>Registration Form</h2>
+
+<form method="POST">
+    {% csrf_token %}
+
+    Name:
+    <input type="text" name="name"><br><br>
+
+    Email:
+    <input type="email" name="email"><br><br>
+
+    Gender:
+    <input type="radio" name="gender" value="Male">Male
+    <input type="radio" name="gender" value="Female">Female
+    <br><br>
+
+    Hobbies:
+    <input type="checkbox" name="hobby" value="Reading">Reading
+    <input type="checkbox" name="hobby" value="Sports">Sports
+    <input type="checkbox" name="hobby" value="Music">Music
+    <br><br>
+
+    City:
+    <select name="city">
+        <option>Hyderabad</option>
+        <option>Delhi</option>
+        <option>Bangalore</option>
+    </select>
+    <br><br>
+
+    <button type="submit">Confirm</button>
+
+</form>
+
+</body>
+</html>

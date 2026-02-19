@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>E-Commerce</title>
+    <style>
+        body { font-family: Arial; background: #f2f2f2; }
+        .container { width: 80%; margin: auto; }
+        .box {
+            background: white;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 8px gray;
+        }
+        button {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            background: green;
+        }
+        .remove { background: red; }
+        .checkout { background: blue; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+<h2>Products</h2>
+{% for product in products %}
+<div class="box">
+    <h3>{{ product.name }}</h3>
+    <p>Price: ₹{{ product.price }}</p>
+    <a href="{% url 'add' product.id %}">
+        <button>Add to Cart</button>
+    </a>
+</div>
+{% endfor %}
+
+<hr>
+
+<h2>Cart</h2>
+{% for item in cart_items %}
+<div class="box">
+    <h3>{{ item.product.name }}</h3>
+    <p>Quantity: {{ item.quantity }}</p>
+    <p>Total: ₹{{ item.total_price }}</p>
+
+    <a href="{% url 'increase' item.id %}"><button>+</button></a>
+    <a href="{% url 'decrease' item.id %}"><button>-</button></a>
+    <a href="{% url 'remove' item.id %}">
+        <button class="remove">Remove</button>
+    </a>
+</div>
+{% endfor %}
+
+<a href="{% url 'checkout' %}">
+    <button class="checkout">Checkout</button>
+</a>
+
+</div>
+</body>
+</html>
