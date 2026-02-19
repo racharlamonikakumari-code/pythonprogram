@@ -1,0 +1,12 @@
+name="monika"
+r=1
+mark=50
+print("my name=",name)
+print("my rollno=",r)
+print("my mark=",mark)
+name="akash"
+r=2
+mark=60
+print("my name=",name)
+print("my rollno=",r)
+print("my mark=",mark)
