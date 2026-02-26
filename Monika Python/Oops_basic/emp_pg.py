@@ -22,7 +22,8 @@ s=int(input())
 
 for i in range(s):
 	print("\nEnter Employee", i+1, "details")
-	emp_id = input("Enter Employee ID: ")
+
+	emp_id = input("Enter Employee ID: ")  
 	name = input("Enter Employee Name: ")
 	basic = float(input("Enter Basic Salary: "))
 

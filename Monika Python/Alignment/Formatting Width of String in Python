@@ -1,0 +1,167 @@
+Formatting Width of String in Python
+
+In Python, you can control width, alignment, and spacing of strings using:
+
+format() method
+
+f-strings
+
+% formatting
+
+ljust(), rjust(), center()
+
+✅ 1️-Using format() Method
+🔹 Syntax:
+"{:width}".format(value)
+🔹 Example:
+name = "Ram"
+print("{:10}".format(name))
+print("{:<10}".format(name))
+print("{:>10}".format(name))
+print("{:^10}".format(name))
+🔹 Output:
+Ram       
+Ram       
+       Ram
+   Ram    
+📌 Meaning:
+Symbol	Meaning
+<	Left align
+>	Right align
+^	Center align
+number	Total width
+✅ 2- Using f-String (Recommended ✔)
+🔹 Syntax:
+f"{value:width}"
+🔹 Example:
+name = "Sita"
+
+print(f"{name:10}")
+print(f"{name:<10}")
+print(f"{name:>10}")
+print(f"{name:^10}")
+✅ 3️- Formatting with Table Example (Important for Lab)
+name = "Rahul"
+age = 21
+city = "Delhi"
+
+print("{:<10}{:<10}{:<10}".format("Name","Age","City"))
+print("{:<10}{:<10}{:<10}".format(name,age,city))
+🔹 Output:
+Name      Age       City      
+Rahul     21        Delhi     
+✅ 4️-Using ljust(), rjust(), center()
+name = "Amit"
+
+print(name.ljust(10))
+print(name.rjust(10))
+print(name.center(10))
+✅ 5️⃣ Fixed Width with Fill Character
+name = "Ram"
+
+print(f"{name:*<10}")
+print(f"{name:*>10}")
+print(f"{name:*^10}")
+🔹 Output:
+Ram*******
+*******Ram
+***Ram****
+✅ 6️⃣ Right Aligned Numeric Table (Very Important 🔥)
+marks = 95
+print(f"{marks:>10}")
+
+👉 Numbers should be right aligned in reports.
+
+🎯 Summary Table
+Method	Example
+format()	"{:<10}".format(name)
+f-string	f"{name:<10}"
+ljust()	name.ljust(10)
+rjust()	name.rjust(10)
+center()	name.center(10)
+
+If you want, I can prepare:
+
+✔ 20 Practice Questions
+✔ Table formatting lab sheet
+✔ PDF version for classroom
+✔ Advanced formatting (float precision + width combined)
+
+Just tell me 👍
+
+name = "Ram"
+print("{:10}".format(name))
+print("{:<10}".format(name))
+print("{:>10}".format(name))
+print("{:^10}".format(name))  blank space print *
+
+If you want to replace the blank spaces with *, you need to specify a fill character in the format.
+
+🔹 Syntax:
+{:fill align width}
+
+👉 fill = character to fill (like *)
+👉 align = < left, > right, ^ center
+
+✅ Modified Code (Using * instead of space)
+name = "Ram"
+
+print("{:*<10}".format(name))   # Left align
+print("{:*>10}".format(name))   # Right align
+print("{:*^10}".format(name))   # Center align
+✅ Output
+Ram*******
+*******Ram
+***Ram****
+🎯 Explanation
+Format	Meaning
+:*<10	Fill *, left align, width 10
+:*>10	Fill *, right align, width 10
+:*^10	Fill *, center align, width 10
+✅ Using f-string (Modern Way ✔)
+name = "Ram"
+
+print(f"{name:*<10}")
+print(f"{name:*>10}")
+print(f"{name:*^10}")
+
+If you want, I can also explain numeric formatting with zero padding (00045 type) 👍
+
+print("{:10}".format(name))  how to fill *
+
+To fill * instead of blank space in:
+
+print("{:10}".format(name))
+
+you must add the fill character + alignment symbol.
+
+✅ Correct Format
+print("{:*<10}".format(name))
+🔹 Example
+name = "Ram"
+
+print("{:*<10}".format(name))   # Left align
+print("{:*>10}".format(name))   # Right align
+print("{:*^10}".format(name))   # Center align
+🔹 Output
+Ram*******
+*******Ram
+***Ram****
+🎯 Rule
+{:fill alignment width}
+
+* → fill character
+
+< → left
+
+> → right
+
+^ → center
+
+10 → total width
+
+If you write only:
+
+print("{:10}".format(name))
+
+👉 Default fill character = space
